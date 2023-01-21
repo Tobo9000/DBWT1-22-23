@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --max-page-width: 1170px;
+    --container-padding: 1rem;
+}
+/*
+* {
+    outline: 1px solid red;
+}
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+.brand-gradient {
+    background: linear-gradient(45deg, #1EB5AD 0%, #8B55A6 100%);
+}
+
+.tilt-parallax {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.tilt-parallax-inner {
+    transform: translateZ(20px);
+}
+
+@layer utilities {
+    .container-fluid {
+        width: min(var(--max-page-width), 100% - (var(--container-padding) * 2));
+        margin-inline: auto;
+    }
+}
